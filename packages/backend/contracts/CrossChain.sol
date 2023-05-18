@@ -2,8 +2,6 @@
 pragma solidity >=0.8.17;
 
 // import "https://github.com/LayerZero-Labs/solidity-examples/blob/main/contracts/lzApp/NonblockingLzApp.sol";
-import './LzApp.sol';
-import './NonblockingLzApp.sol';
 
 contract CrossChain is NonblockingLzApp {
     string public data = "Nothing received yet";

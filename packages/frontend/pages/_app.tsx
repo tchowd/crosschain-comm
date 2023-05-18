@@ -15,6 +15,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 import { useIsMounted } from '../hooks';
+import "@fontsource/abel"
+
 
 const { chains, provider, webSocketProvider } = configureChains(
   [goerli, optimismGoerli],

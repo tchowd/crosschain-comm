@@ -30,6 +30,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@chakra-ui/icons": "^2.0.19",
     "@emotion/react": "^11.11.0",
+    "@fontsource/abel": "^4.5.7",
     "emotion-theming": "^11.0.0"
   }
 }

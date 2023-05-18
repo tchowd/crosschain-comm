@@ -35,7 +35,7 @@ function SelectContract() {
              </HStack>
             </Box>
             </Link>
-            <Link href='/goreli-interact'>
+            <Link href='/goerli-interact'>
             <Box padding={'8rem'} borderWidth="2px" borderColor={'#141414'} color='white' backgroundColor={'#141414'}>            
             <Text> 01/ </Text>
               <HStack>

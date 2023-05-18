@@ -51,18 +51,18 @@ export default function OPInteract() {
     }
   }
   return(isConnected) ? (
-    <Container>
+    <Container paddingTop={'5rem'}>
       <Heading
         bg='white'
         bgClip='text'
         fontSize='5xl'
         fontWeight='extrabold'>
-          Chat with Goreli 
+          Chat with Goerli 
         </Heading>
       
       <Box marginTop={'2rem'}>
-        <Text color={'#fff'}>This contract is deployed on Optisim Goreli, you can view the message sent from the Goreli testnet and a send a message! </Text>
-        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
+        <Text color={'#fff'}>This contract is deployed on Optisim Goerli, you can view the message sent from the Goerli testnet and a send a message! </Text>
+        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goerli: {data}</Text>
       </Box>
       <Box marginTop={'2rem'}>
         <Input type="text" value={message} color={'white'} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />

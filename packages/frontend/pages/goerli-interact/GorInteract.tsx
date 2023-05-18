@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import CrossChain from '../../contracts/CrossChain.json'
 import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
 
-const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address
+const contractAddressGor = '0xd27eb0ada1e4079cb56ba79c1794a0ab5dbbcdf2' //change w/deployed smart contract address
 const contractAbi = CrossChain.output.abi 
 
 export default function GorInteract() {
@@ -49,24 +49,22 @@ export default function GorInteract() {
     }
   }
   return (
-    <Container>
+    <Container paddingTop={'5rem'}>
       <Heading
         bg='white'
         bgClip='text'
         fontSize='5xl'
         fontWeight='extrabold'>
-          Chat with Goreli
+          Chat with Optimism Goerli
         </Heading>
       
-      <Box marginTop={'2rem'}>
-        <Text color={'#fff'}>This contract is deployed on Optisim Goreli, you can view the message sent from the Goreli testnet and a send a message! </Text>
-        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
-      </Box>
-      <Box marginTop={'2rem'}>
-        <Input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
+      <Box marginTop={'2rem'} >
+        <Text marginTop={'2rem'} color={'#fff'}>This contract is deployed on ETH Goerli testnet, you can view the message sent from the Optimisim Goerli testnet and a send a message! </Text>
+        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goerli: {data}</Text>
+     
+        <Input marginTop={'2rem'} type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
         <Button onClick={() => sendMessage()} marginTop={'1rem'}>Send Message</Button>
       </Box>
-
     </Container>
   );
 }

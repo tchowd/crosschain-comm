@@ -6,7 +6,7 @@ import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
 const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address
 const contractAbi = CrossChain.output.abi 
 
-export default function OPInteract() {
+export default function GorInteract() {
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
   const [contract, setContract] = useState(null);
@@ -63,7 +63,7 @@ export default function OPInteract() {
         <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
       </Box>
       <Box marginTop={'2rem'}>
-        <Input type="text" value={message} color={'white'} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
+        <Input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
         <Button onClick={() => sendMessage()} marginTop={'1rem'}>Send Message</Button>
       </Box>
 

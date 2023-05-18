@@ -25,7 +25,7 @@ export default function Home() {
           </Heading>
           <video 
             src="https://d3a2dpnnrypp5h.cloudfront.net/layerzero-network/header-animation.mp4"
-            width={'1800'}  controls autoPlay muted />
+            width={'1800'} controls autoPlay muted />
           <Text color={'white'} maxW={'3xl'} fontSize={'xl'}>
             Powered by LayerZero
           </Text>

@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import CrossChain from '../../contracts/CrossChain.json'
 import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
+import Auth from '../auth';
+import { useAccount } from 'wagmi'
 
 const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address
 const contractAbi = CrossChain.output.abi 
 
 export default function OPInteract() {
-  const [provider, setProvider] = useState(null);
-  const [signer, setSigner] = useState(null);
+  const [provider, setProvider] = useState();
+  const [signer, setSigner] = useState();
   const [contract, setContract] = useState(null);
   const [data, setData] = useState(null);
   const [message, setMessage] = useState('');
+  const { isConnected } = useAccount()
 
   useEffect(() => {
     async function setupProvider() {
@@ -36,7 +39,6 @@ export default function OPInteract() {
         const data = await contract.data();
         setData(data);
       }
-
       fetchData();
     }
   }, [contract]);
@@ -48,14 +50,14 @@ export default function OPInteract() {
       setData(data);
     }
   }
-  return (
+  return(isConnected) ? (
     <Container>
       <Heading
         bg='white'
         bgClip='text'
         fontSize='5xl'
         fontWeight='extrabold'>
-          Chat with Goreli
+          Chat with Goreli 
         </Heading>
       
       <Box marginTop={'2rem'}>
@@ -63,10 +65,12 @@ export default function OPInteract() {
         <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
       </Box>
       <Box marginTop={'2rem'}>
-        <Input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
+        <Input type="text" value={message} color={'white'} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
         <Button onClick={() => sendMessage()} marginTop={'1rem'}>Send Message</Button>
       </Box>
 
     </Container>
-  );
+  ) : (
+    <Auth />
+  )
 }

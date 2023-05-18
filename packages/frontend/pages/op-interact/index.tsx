@@ -6,7 +6,7 @@ import { useAccount } from 'wagmi'
 import Auth from '../auth'
 
 const OPPage: NextPage = () => {
-    const { isConnected } = useAccount()
+  const { isConnected } = useAccount()
 
   return(isConnected) ? (
     <Box backgroundColor={'#000'}>

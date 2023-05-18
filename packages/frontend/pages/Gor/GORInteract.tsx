@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import CrossChain from '../contracts/CrossChain.json'
+import CrossChain from '../../contracts/CrossChain.json'
+import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
 
 const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address
 const contractAbi = CrossChain.output.abi 
 
-export default function TestComponent() {
+export default function OPInteract() {
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
   const [contract, setContract] = useState(null);
@@ -48,11 +49,24 @@ export default function TestComponent() {
     }
   }
   return (
-    <div>
-      <h1>LayerZeroTest Contract</h1>
-      <p>Data: {data}</p>
-      <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
-      <button onClick={() => sendMessage()}>Send Message</button>
-    </div>
+    <Container>
+      <Heading
+        bg='white'
+        bgClip='text'
+        fontSize='5xl'
+        fontWeight='extrabold'>
+          Chat with Goreli
+        </Heading>
+      
+      <Box marginTop={'2rem'}>
+        <Text color={'#fff'}>This contract is deployed on Optisim Goreli, you can view the message sent from the Goreli testnet and a send a message! </Text>
+        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
+      </Box>
+      <Box marginTop={'2rem'}>
+        <Input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
+        <Button onClick={() => sendMessage()} marginTop={'1rem'}>Send Message</Button>
+      </Box>
+
+    </Container>
   );
 }

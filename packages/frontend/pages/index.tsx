@@ -1,17 +1,18 @@
 import Head from 'next/head';
-
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Container, Stack, Heading, Button, Text, Link, Box, } from '@chakra-ui/react';
 import { AspectRatioBox } from "@chakra-ui/core";
 import Navbar from './components/Navbar';
+import { jsx } from '@emotion/react'
 
 export default function Home() {
+  const { height, width } = useWindowDimensions();
+
   return (
-    <Box 
-    bgGradient='linear-gradient(90deg, rgba(21,39,101,1) 7%, rgba(47,17,68,1) 14%, rgba(18,9,38,1) 23%, rgba(18,20,42,1) 31%, rgba(1,1,1,1) 49%, rgba(0,0,0,1) 50%, rgba(1,1,3,1) 50%, rgba(18,20,42,1) 67%, rgba(18,9,38,1) 76%, rgba(47,17,68,1) 84%, rgba(21,39,101,1) 91%)'>
-      {/* 12142A */}
+    <Box backgroundColor={'#000'}>
       <Navbar />
-     <Container maxW={'5xl'} marginTop={'6rem'}>
+     <Container maxW={'5xl'} marginTop={'4rem'}>
         <Stack
           textAlign={'center'}
           align={'center'}
@@ -24,14 +25,11 @@ export default function Home() {
             fontWeight='bold'>
             Cross-Chain Messaging
           </Heading>
-            <AspectRatioBox maxW="560px" ratio={16 / 9}>
-              <Box
-                as="video"
-                src="https://d3a2dpnnrypp5h.cloudfront.net/layerzero-network/header-animation.mp4"
-                autoPlay
-                loop
-              />
-            </AspectRatioBox>
+          <video 
+            src="https://d3a2dpnnrypp5h.cloudfront.net/layerzero-network/header-animation.mp4"
+            width={'1800'}  controls autoPlay muted> 
+            
+            </video>
           <Text color={'white'} maxW={'3xl'} fontSize={'xl'}>
             Powered by LayerZero
           </Text>
@@ -48,6 +46,7 @@ export default function Home() {
                 _hover={{  color: 'white'}}>
                 <Text 
                 color={'black'}
+                _hover={{textDecoration: 'underline' }}
                 fontWeight='bold'> Get Started</Text>
               </Button>
             </Link>
@@ -62,6 +61,7 @@ export default function Home() {
                 _hover={{  color: 'white'}}>
                 <Text 
                 color={'black'}
+                _hover={{textDecoration: 'underline' }}
                 fontWeight='bold'> Github</Text>
               </Button>
             </Link>
@@ -72,8 +72,8 @@ export default function Home() {
             </Text>
         </Box>
         </Stack>
-        
       </Container>
+      
     </Box>
   );
 }

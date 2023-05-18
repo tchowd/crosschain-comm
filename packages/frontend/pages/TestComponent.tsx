@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-// import { abi } from '../contracts/CrossChain.json'; // Import the ABI 
 import CrossChain from '../contracts/CrossChain.json'
 
 const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address

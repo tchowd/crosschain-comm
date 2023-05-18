@@ -24,10 +24,9 @@ export default function TestComponent() {
         setSigner(signer);
         setContract(contract);
       } else {
-        console.log('Please install MetaMask!');
+        console.log('Wallet Not Connected');
       }
     }
-
     setupProvider();
   }, []);
 
@@ -54,7 +53,7 @@ export default function TestComponent() {
       <h1>LayerZeroTest Contract</h1>
       <p>Data: {data}</p>
       <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
-      <button onClick={() => sendMessage('Hello, World!')}>Send Message</button>
+      <button onClick={() => sendMessage()}>Send Message</button>
     </div>
   );
 }

@@ -3,17 +3,19 @@ import { ConnectButton } from '@rainbow-me/rainbowkit'
 import React from 'react'
 import { useAccount } from 'wagmi'
 import OPInteract from '../OP/OPInteract'
+import OPPage from '../OP'
 
-function SelectGame() {
-   const {  isConnected } = useAccount()
+function SelectContract() {
+   const { isConnected } = useAccount()
 
   return (isConnected) ? (
     <div>
-         <Box backgroundColor={'#000'}>
+         {/* <Box backgroundColor={'#000'}>
      <Container maxW={'5xl'} marginTop={'5rem'}>
         <OPInteract />
       </Container>
-    </Box>
+    </Box> */}
+    <OPPage />
     </div>
   ) :(
     <div>
@@ -38,4 +40,4 @@ function SelectGame() {
   )
 }
 
-export default SelectGame
+export default SelectContract

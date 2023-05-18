@@ -63,7 +63,7 @@ export default function OPInteract() {
         <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goreli: {data}</Text>
       </Box>
       <Box marginTop={'2rem'}>
-        <Input type="text" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
+        <Input type="text" value={message} color={'white'} onChange={(e) => setMessage(e.target.value)} placeholder="Type a message" />
         <Button onClick={() => sendMessage()} marginTop={'1rem'}>Send Message</Button>
       </Box>
 

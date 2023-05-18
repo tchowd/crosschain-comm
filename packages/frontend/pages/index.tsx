@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import useWindowDimensions from '../hooks/useWindowDimensions';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Container, Stack, Heading, Button, Text, Link, Box, } from '@chakra-ui/react';
 import { AspectRatioBox } from "@chakra-ui/core";
@@ -7,7 +6,6 @@ import Navbar from './components/Navbar';
 import { jsx } from '@emotion/react'
 
 export default function Home() {
-  const { height, width } = useWindowDimensions();
 
   return (
     <Box backgroundColor={'#000'}>

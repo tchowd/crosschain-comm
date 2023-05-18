@@ -47,7 +47,7 @@ yarn hardhat compile
 3. Run this script to deploy the contracts:
 
 ```bash
-yarn hardhat deploy-zksync
+yarn hardhat deploy
 ```
 
 ## Technologies

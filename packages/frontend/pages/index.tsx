@@ -45,7 +45,7 @@ export default function Home() {
                 fontWeight='bold'> Get Started</Text>
               </Button>
             </Link>
-            <Link href='https://github.com/tchowd/guess-secret-number' textDecoration={'none'} _hover={{textDecoration: 'none'}}>
+            <Link href='https://github.com/tchowd/crosschain-comm' textDecoration={'none'} _hover={{textDecoration: 'none'}}>
               <Button
                 height={'3rem'}
                 px={6}

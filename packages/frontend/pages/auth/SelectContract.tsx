@@ -30,17 +30,17 @@ function SelectContract() {
             <Box padding={'8rem'} borderWidth="2px" borderColor={'#141414'} color='white' backgroundColor={'#141414'}>            
             <Text> 01/ </Text>
              <HStack>
-              <Image src='../public/star.svg'/>
-              <Text> Optimisim Goerli Testnet </Text>
+              <Image src='../../../images/star.svg' width={'10rem'}/>
+              <Heading> OP Goerli Testnet </Heading>
              </HStack>
             </Box>
             </Link>
             <Link href='/goerli-interact'>
             <Box padding={'8rem'} borderWidth="2px" borderColor={'#141414'} color='white' backgroundColor={'#141414'}>            
-            <Text> 01/ </Text>
+            <Text> 02/ </Text>
               <HStack>
-                <Image src='../public/braces.svg'/>
-                <Text> Goerli Testnet </Text>
+                <Image src='../../../images/braces.svg' width={'10rem'}/>
+                <Heading> Goerli Testnet </Heading>
              </HStack>
             </Box>
             </Link>

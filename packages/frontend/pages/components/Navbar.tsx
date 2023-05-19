@@ -98,9 +98,5 @@ import {
       label: '</A> Home',
       href: '/',
     },
-    {
-      label: '</A> About',
-      href: '/about',
-    }
   ];
   

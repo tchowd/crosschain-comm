@@ -2,11 +2,12 @@ import { useState, useEffect, ChangeEvent } from 'react';
 import { ethers } from 'ethers';
 import CrossChain from '../../contracts/CrossChain.json'
 import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
+import { useChainId } from 'wagmi';
 
-const contractAddressGor = '0x4e6a0019e44a3a611fd9d821cbd17a2e596a48cb' //change w/deployed smart contract address
-const contractAbi = CrossChain.output.abi 
+const contractAddressGor = '0xd27eb0ada1e4079cb56ba79c1794a0ab5dbbcdf2' //change w/deployed smart contract address
+const contractAbi: ethers.ContractInterface = CrossChain.output.abi;
 
-const OPInteract = () => {
+const GoInteract = () => {
   const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
   const [signer, setSigner] = useState<ethers.providers.JsonRpcSigner | null>(null);
   const [contract, setContract] = useState<ethers.Contract | null>(null);
@@ -48,6 +49,7 @@ const OPInteract = () => {
       setData(data);
     }
   }
+  console.log('data', data);
 
   const handleMessageChange = (e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
@@ -60,21 +62,20 @@ const OPInteract = () => {
         bgClip='text'
         fontSize='5xl'
         fontWeight='extrabold'>
-          Chat with Goerli
+          Chat with Optimism Goerli
       </Heading>
 
       <Box marginTop={'2rem'} >
-        <Text color={'#fff'}>Please ensure you are connected to the Optimism Goerli testnet!</Text>
-        <Text color={'#fff'}marginTop={'2rem'}>This is a simple example of how to interact with a smart contract deployed on the Goerli testnet from Optimisim Goerli.</Text>
-        <Text marginTop={'2rem'} color={'#fff'}>View the message sent from the Goerli testnet and send a message back! </Text>
-        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goerli: {data}</Text>
+        <Text color={'#fff'}>Please ensure you are connected to the Goerli testnet!</Text>
+        <Text color={'#fff'} marginTop={'2rem'}>This is a simple example of how to interact with a smart contract deployed on the Optimism Goerli testnet from from Goerli.</Text>
+        <Text marginTop={'2rem'} color={'#fff'}>View the message sent from the Optimisim Goerli testnet and send a message back! </Text>
+        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Optimisim Goerli: {data}</Text>
 
         <Input marginTop={'2rem'} type="text" value={message} onChange={handleMessageChange} placeholder="Type a message" />
         <Button onClick={sendMessage} marginTop={'1rem'}>Send Message</Button>
       </Box>
-
     </Container>
   );
 }
 
-export default OPInteract;
+export default GoInteract;

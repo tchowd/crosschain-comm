@@ -31,7 +31,7 @@ function SelectContract() {
             <Text> 01/ </Text>
              <HStack>
               <Image src='../public/star.svg'/>
-              <Text> Optimisim Goerli </Text>
+              <Text> Optimisim Goerli Testnet </Text>
              </HStack>
             </Box>
             </Link>
@@ -40,7 +40,7 @@ function SelectContract() {
             <Text> 01/ </Text>
               <HStack>
                 <Image src='../public/braces.svg'/>
-                <Text> Optimisim Goerli </Text>
+                <Text> Goerli Testnet </Text>
              </HStack>
             </Box>
             </Link>

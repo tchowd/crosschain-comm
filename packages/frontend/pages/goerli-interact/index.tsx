@@ -10,13 +10,16 @@ import { goerli } from 'wagmi/chains'
 const GoPage: NextPage = () => {
   const { isConnected } = useAccount()
 
-  return(isConnected && goerli) ? (
-    <Box backgroundColor={'#000'}>
-        <Navbar />
-        <GoInteract />
-    </Box>
-  ) :(
-    <Auth />
+  if (isConnected) {
+    return(
+      <Box backgroundColor={'#fff'}>
+          <Navbar />
+          <GoInteract />
+      </Box>
+    )
+  }
+  return(
+      <Auth />
   )
 }
 

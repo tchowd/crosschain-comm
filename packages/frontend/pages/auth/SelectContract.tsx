@@ -39,7 +39,7 @@ function SelectContract() {
             <Box padding={'8rem'} borderWidth="2px" borderColor={'#141414'} color='white' backgroundColor={'#141414'}>            
             <Text> 02/ </Text>
               <HStack>
-                <Image src='../../../images/braces.svg' width={'10rem'}/>
+                <Image src='../../../images/braces.svg' width={'12rem'}/>
                 <Heading> Goerli Testnet </Heading>
              </HStack>
             </Box>

@@ -48,7 +48,7 @@ import {
                   <Link
                     p={2}
                     href={navItem.href ?? '#'}
-                    fontSize={'xl'}
+                    fontSize={'l'}
                     fontWeight={500}
                     color={'white'}
                     _hover={{

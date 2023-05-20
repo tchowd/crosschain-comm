@@ -15,7 +15,14 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 import { useIsMounted } from '../hooks';
+import { extendTheme } from "@chakra-ui/react"
 
+const theme = extendTheme({
+  fonts: {
+    heading: `'Open Sans', sans-serif`,
+    body: `'Raleway', sans-serif`,
+  },
+})
 
 const { chains, provider, webSocketProvider } = configureChains(
   [goerli, optimismGoerli],
@@ -23,7 +30,7 @@ const { chains, provider, webSocketProvider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'create-web3',
+  appName: 'Cross-Chain Messaging',
   chains,
 });
 
@@ -42,9 +49,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode chains={chains}>
         <NextHead>
-          <title>create-web3</title>
+          <title>Cross-Chain Messaging</title>
         </NextHead>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <Component {...pageProps} />
         </ChakraProvider>
       </RainbowKitProvider>

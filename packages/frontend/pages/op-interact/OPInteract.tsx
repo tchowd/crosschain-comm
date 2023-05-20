@@ -65,7 +65,7 @@ const OPInteract = () => {
 
       <Box marginTop={'2rem'} >
         <Text color={'#fff'}>Please ensure you are connected to the Optimism Goerli testnet!</Text>
-        <Text color={'#fff'}marginTop={'2rem'}>This is a simple example of how to interact with a smart contract deployed on the Goerli testnet from Optimisim Goerli.</Text>
+        <Text color={'#fff'}marginTop={'2rem'}>Interact with a smart contract deployed on the Goerli testnet from Optimisim Goerli.</Text>
         <Text marginTop={'2rem'} color={'#fff'}>View the message sent from the Goerli testnet and send a message back! Send a message to view the message.</Text>
         <Text color={'#fff'} marginTop={'1rem'}>View message sent from Goerli: {data}</Text>
 

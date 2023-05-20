@@ -27,6 +27,8 @@
     ]
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.19"
+    "@chakra-ui/icons": "^2.0.19",
+    "@fontsource/open-sans": "^4.5.14",
+    "@fontsource/raleway": "^4.5.12"
   }
 }

@@ -61,7 +61,7 @@ function SelectContract() {
             <Center paddingTop={'2rem'}>
             <Box padding={'3rem'} borderWidth="2px" borderColor={'#141414'} color='white' backgroundColor={'#141414'}>            
             <VStack>
-                <Text size='md' marginBottom={'1rem'}> Please connect to your wallet and the Optimism Testnet.</Text>
+                <Text size='md' marginBottom={'1rem'}> Please connect your wallet to access what comes next.</Text>
             <ConnectButton />   
             </VStack>
         </Box>

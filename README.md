@@ -1,7 +1,5 @@
 # Crosschain Communication w/LayerZero
 
-**Please note that this repo is in progress!**
-
 A communication platform that enables users to send a message from Optimism Goreli to Goreli testnet and vice-versa. 
 
 

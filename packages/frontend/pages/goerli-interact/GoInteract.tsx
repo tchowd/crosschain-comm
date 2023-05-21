@@ -3,7 +3,6 @@ import { ethers } from 'ethers';
 import CrossChain from '../../contracts/CrossChain.json'
 import {  Box, Flex, Badge, Icon, Button, Container, Heading, Input, Text, Alert, AlertIcon, AlertTitle } from '@chakra-ui/react';
 import { motion } from "framer-motion";
-import { AiOutlineMail } from "react-icons/ai";
 
 const contractAddressGor = '0xd27eb0ada1e4079cb56ba79c1794a0ab5dbbcdf2' //change w/deployed smart contract address
 const contractAbi: ethers.ContractInterface = CrossChain.output.abi;
@@ -72,21 +71,20 @@ const GoInteract = () => {
         <Text color={'#fff'}>Please ensure you are connected to the Goerli testnet!</Text>
       </Box>
 
-      <Box marginTop={'2rem'} p="2" >
+      <Box p="2" >
         <Text color={'#fff'}>Interact with a smart contract deployed on the Optimism Goerli testnet from Goerli testnet.</Text>
         <Text marginTop={'2rem'} color={'#fff'}>View the message sent from the Optimisim Goerli testnet and send a message back! Send a message to view the message.</Text>
       </Box>
         <Flex direction="column" align="start" marginTop="2rem"  p="2" >
           <Flex>
           <Box backgroundColor="blue.500" p="2" borderRadius="full" mr="2" mt='1' height={'1rem'} width={'1rem'} />
-
           <Text color="#fff" fontWeight="bold">
             New message from Optimisim Goerli: 
           </Text>
           </Flex>
           {data && (
-            <Container marginTop={'0.2rem'} p="2" >
-            <Text mt="1" fontSize="1em" color="green" >
+            <Container marginTop={'1rem'} p="2" backgroundColor="white" borderRadius={'0.5rem'}>
+            <Text mt="1" fontSize="1em" color="#000" >
               {data}
             </Text>
             </Container>

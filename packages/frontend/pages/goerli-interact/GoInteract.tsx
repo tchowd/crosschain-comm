@@ -37,7 +37,6 @@ const GoInteract = () => {
         const data = await contract?.data();
         setData(data);
       // }
-
       fetchData();
     }
   }, [contract]);

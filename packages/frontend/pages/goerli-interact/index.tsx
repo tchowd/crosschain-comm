@@ -12,7 +12,7 @@ const GoPage: NextPage = () => {
 
   if (isConnected) {
     return(
-      <Box backgroundColor={'#fff'}>
+      <Box backgroundColor={'#000'}>
           <Navbar />
           <GoInteract />
       </Box>

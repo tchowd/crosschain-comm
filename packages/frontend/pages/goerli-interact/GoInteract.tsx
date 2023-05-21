@@ -1,11 +1,13 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import { ethers } from 'ethers';
 import CrossChain from '../../contracts/CrossChain.json'
-import { Box, Button, Container, Heading, Input, Text } from '@chakra-ui/react';
-import { useChainId } from 'wagmi';
+import {  Box, Flex, Badge, Icon, Button, Container, Heading, Input, Text, Alert, AlertIcon, AlertTitle } from '@chakra-ui/react';
+import { motion } from "framer-motion";
+import { AiOutlineMail } from "react-icons/ai";
 
 const contractAddressGor = '0xd27eb0ada1e4079cb56ba79c1794a0ab5dbbcdf2' //change w/deployed smart contract address
 const contractAbi: ethers.ContractInterface = CrossChain.output.abi;
+
 
 const GoInteract = () => {
   const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
@@ -13,6 +15,7 @@ const GoInteract = () => {
   const [contract, setContract] = useState<ethers.Contract | null>(null);
   const [data, setData] = useState<string | null>(null);
   const [message, setMessage] = useState('');
+  const [messageSent, setMessageSent] = useState(false);
 
   useEffect(() => {
     async function setupProvider() {
@@ -43,10 +46,11 @@ const GoInteract = () => {
 
   const sendMessage = async () => {
     if (contract) {
-      await contract.send(message, { value: ethers.utils.parseEther('0.1') }); // Sending 0.1 ETH as an example
+      await contract.send(message, { value: ethers.utils.parseEther('0.1') }); // sending 0.1 ETH as an example
       const data = await contract.data();
       setData(data);
     }
+    setMessageSent(true);
   }
   console.log('data', data);
 
@@ -55,7 +59,7 @@ const GoInteract = () => {
   }
 
   return (
-    <Container paddingTop={'5rem'}>
+    <Container marginTop={'5rem'} borderWidth={'0.1rem'} padding={'2rem'}>
       <Heading
         bg='white'
         bgClip='text'
@@ -64,15 +68,46 @@ const GoInteract = () => {
           Chat with Optimism Goerli
       </Heading>
 
-      <Box marginTop={'2rem'} >
+      <Box marginTop={'2rem'} p="2"  fontWeight="bold">
         <Text color={'#fff'}>Please ensure you are connected to the Goerli testnet!</Text>
-        <Text color={'#fff'} marginTop={'2rem'}>Interact with a smart contract deployed on the Optimism Goerli testnet from Goerli.</Text>
+      </Box>
+
+      <Box marginTop={'2rem'} p="2" >
+        <Text color={'#fff'}>Interact with a smart contract deployed on the Optimism Goerli testnet from Goerli testnet.</Text>
         <Text marginTop={'2rem'} color={'#fff'}>View the message sent from the Optimisim Goerli testnet and send a message back! Send a message to view the message.</Text>
-        <Text color={'#fff'} marginTop={'1rem'}>View message sent from Optimisim Goerli: {data}</Text>
+      </Box>
+        <Flex direction="column" align="start" marginTop="2rem"  p="2" >
+          <Flex>
+          <Box backgroundColor="blue.500" p="2" borderRadius="full" mr="2" mt='1' height={'1rem'} width={'1rem'} />
+
+          <Text color="#fff" fontWeight="bold">
+            New message from Optimisim Goerli: 
+          </Text>
+          </Flex>
+          {data && (
+            <Container marginTop={'0.2rem'} p="2" >
+            <Text mt="1" fontSize="1em" color="green" >
+              {data}
+            </Text>
+            </Container>
+          )
+            }
+        </Flex>
 
         <Input marginTop={'2rem'} type="text" color={'#fff'} value={message} onChange={handleMessageChange} placeholder="Type a message" />
         <Button onClick={sendMessage} marginTop={'1rem'}>Send Message</Button>
-      </Box>
+
+      {messageSent && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}>
+          <Alert status="success" borderRadius={'0.5rem'} marginTop={'2rem'} variant="subtle" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center" >
+            <AlertTitle mt={2} mb={1} fontSize="lg"> Message Sent!</AlertTitle>
+          </Alert>
+        </motion.div>
+      )}
     </Container>
   );
 }

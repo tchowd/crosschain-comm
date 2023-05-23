@@ -2,10 +2,7 @@
 
 A communication platform that enables users to send a message from Optimism Goreli to Goreli testnet and vice-versa. 
 
-
-https://github.com/tchowd/crosschain-comm/assets/42366823/d245c6f8-784a-4273-a2ea-18e961744c83
-
-
+https://github.com/tchowd/crosschain-comm/assets/42366823/693fd454-41a2-4b54-95b2-815bbf28bf93
 
 ## Getting Started
 
